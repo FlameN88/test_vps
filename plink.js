@@ -767,7 +767,8 @@ window.onload = function() {
 									        if(xhr.status==200){
 
 									 			//connection = new WebSocket("ws://50.57.87.228:80/");
-                                                connection = new WebSocket("ws://localhost:1337/");
+                                                //connection = new WebSocket("ws://localhost:1337/");
+                                                connection = new WebSocket("ws://flamedev.cu.cc:1337/");
                                                 
 												connection.onopen = function(event){
 													console.log("connection created");
