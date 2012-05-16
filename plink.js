@@ -766,8 +766,9 @@ window.onload = function() {
 									    if(xhr.readyState == 4){
 									        if(xhr.status==200){
 
-									 			connection = new WebSocket("ws://50.57.87.228:80/");
-
+									 			//connection = new WebSocket("ws://50.57.87.228:80/");
+                                                connection = new WebSocket("ws://localhost:1337/");
+                                                
 												connection.onopen = function(event){
 													console.log("connection created");
 												};
@@ -804,7 +805,7 @@ window.onload = function() {
                                                     for(i in data){
                                                         str += data[i] + "|"; 
                                                     }
-                                                    console.log("size:"+data.length+ " "+str);
+                                                    console.log("size("+data.length+ ") "+str);
             
 													/*if(isNaN(data[0])){
 														console.log(data[0]);
@@ -930,6 +931,7 @@ window.onload = function() {
 
 													//server wants to know about rooms and our name...
 													if(parseInt(data[1],10) === 500){
+													   console.log("sending username("+userName+") and seesion("+sessionWanted+")")
 														connection.send("33,"+userName+","+sessionWanted);
 													}
 
